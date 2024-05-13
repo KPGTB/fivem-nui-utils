@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./libs/FiveM.js"></script>
+    <script src="./libs/Components.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Example Page</h1>
+    <section>
+        <fivem-test x-data x-bind:what="$store.data" />
+    </section>
+    <section>
+        <fivem-test what="Alpine" />
+    </section>
+    <section>
+        <fivem-example custom="data" image="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" />
+    </section>
+
+
+    <script>
+        registerComponent("test")
+        registerComponent("example")
+
+
+        useNui("info", (data) => {
+            Alpine.store("data", data)
+        })
+
+        useNui("toggle", () => {
+            const crr = Alpine.store("open")
+            Alpine.store("open", !crr)
+        })
+
+        document.addEventListener("alpine:init", () => {
+            Alpine.store("open", false)
+            Alpine.store("data", "yeah!")
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<section x-data x-show="$store.open" x-transition.duration.500ms
+    class="top-1/3 left-3 fixed flex justify-evenly items-center gap-10 border-2 bg-blue-200 p-10 border-blue-600 border-solid rounded-lg">
+    <img src="{{image}}" class="border-2 border-black border-solid rounded-full size-44">
+    <article>
+        Your {{custom}} is <span x-text="$store.data"></span>
+    </article>
+</section>
