@@ -75,3 +75,19 @@ callNui("CALLBACK_NAME", REQ_DATA, (res) => {
 	// ... (res == data from lua's response)
 })
 ```
+
+## Usage
+
+- Download template which you want to use `[AlpineJS]` or `[Simple ReactJS]`
+- Rename downloaded folder to `nui`
+- Put that folder into your script
+- Add this into your `fxmanifest.lua`
+
+	```lua
+	ui_page 'nui/index.html'
+	
+	files {
+	    'nui/index.html',
+	    'nui/**.*'
+	}
+	```
